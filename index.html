@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="output.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+    <div class="bg-[#1C2024] px-5 py-5">
+        <!-- md:hidden -->
+        <div class="flex justify-between">
+            <div
+                class="block md:hidden d-inline-block d-lg-none flex-order-1 f5 no-underline border color-border-default rounded-2 px-2 py-1 color-fg-inherit text-white rounded-md ">
+                sign up
+            </div>
+            <div class="block md:hidden">
+                <img class="h-10" src="img/github-mark-white.svg" alt="">
+            </div>
+            <div class="block pt-2 md:hidden">
+                <div class="hamburger inline-block cursor-pointer">
+                    <div class="line h-0.5 w-6 bg-white my-1 mx-2"></div>
+                    <div class="line h-0.5 w-6 bg-white my-1 mx-2"></div>
+                    <div class="line h-0.5 w-6 bg-white my-1 mx-2"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="hidden md:block">
+            <div class="flex justify-between ">
+                <div class="flex justify start space-x-5 pt-3">
+                    <div>
+                        <img class="h-8" src="img/github-mark-white.svg" alt="githubLogo">
+                    </div>
+                    <div class="text-white ">
+                        Products
+                    </div>
+                    <div class="text-white ">
+                        Solutions
+                    </div>
+                    <div class="text-white ">
+                        Open source
+                    </div>
+                    <div class="text-white ">
+                        Products
+                    </div>
+                </div>
+                <div class="flex justify-end space-x-3">
+                    <div class="flex justify-between space-x-5">
+                        <div class="pt-2">
+                            <input type="text"
+                                class="d-inline-block w-72 d-lg-none flex-order-1 f5 no-underline border color-border-default bg-inherit rounded-2 px-2 py-1 color-fg-inherit text-white rounded-md"
+                                placeholder="search or jump to..." id="username">
+                        </div>
+                        <div>
+                            <button
+                                class="hidden md:block d-inline-block d-lg-none flex-order-1 f5 no-underline border color-border-default rounded-2 px-2 py-2 color-fg-inherit text-white rounded-md hover:bg-white hover:text-black"
+                                id="search">
+                                sign up
+                            </button>
+                        </div>
+                        <div>
+                            <button
+                                class="hidden md:block d-inline-block d-lg-none flex-order-1 f5 no-underline border color-border-default rounded-2 px-2 py-2 color-fg-inherit text-white rounded-md hover:bg-white hover:text-black">
+                                sign in
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- navbar end -->
+
+        <!-- <div class="block md:hidden bg-[#0D1117]" id="results text-white">
+    <img src="" id="profile_pic">
+</div> -->
+
+
+
+        <!-- <h1 class="flex justify-center items-center">GitHub User Search</h1>
+        <input type="text" id="username" placeholder="Enter GitHub username" />
+        <button id="search" type="submit">Search</button>-->
+    </div>
+    <div class="min-h-screen bg-[#0D1117] mx-auto">
+        <div class="mx-10 pt-8 flex space-x-5">
+            <img class="h-16 w-16 rounded-full" src="img/github-mark-white.svg" id="profile_pic">
+            <div>
+                <p id="results" class="text-white text-2xl font-extrabold" id="profile_name">pratyush singha</p>
+                <p class="text-gray-400 font-medium" id="profile_login">pratyushsingha</p>
+            </div>
+        </div>
+
+        <div class="my-4 mx-10">
+            <p class="text-white font-medium text-lg" id="profile_bio">B.tech. Computer Science student at JIS
+                UNIVERSITY</p>
+            <button
+                class="w-full max-w-xs flex items-center justify-center px-4 py-2 text-white bg-green-500 rounded-md hover:bg-green-600 focus:outline-none my-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <!-- SVG path data -->
+                </svg>
+                Follow
+            </button>
+            <div class="flex space-x-3">
+                <img class="h-5 w-5 mt-1" width="50" height="50" src="https://img.icons8.com/ios/50/FFFFFF/link--v1.png" alt="link--v1" />
+                <!-- <p id="profile_blog" class="text-gray-400 text-base">
+                    <a id="profile_blog" href="https://pratyushsingha.tech">pratyushsingha.tech</a>
+                </p> -->
+                <a class="text-gray-400 text-base" target="_blank" id="profile_blog" href="https://pratyushsingha.tech">pratyushsingha.tech</a>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="script.js"></script>
+<a href="https://icons8.com/icon/92/link">Link</a> icon by <a href="https://icons8.com">Icons8</a>
+
+</html>
