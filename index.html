@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub</title>
-    <!-- <link rel="stylesheet" href="output.css"> -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="output.css">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link rel="shortcut icon" href="img/github-mark.svg" type="image/x-icon">
 
 </head>
@@ -77,21 +77,13 @@
         </div>
         <!-- navbar end -->
 
-        <!-- <div class="block md:hidden bg-[#0D1117]" id="results text-white">
-    <img src="" id="profile_pic">
-</div> -->
-
-
-
-        <!-- <h1 class="flex justify-center items-center">GitHub User Search</h1>
-        <input type="text" id="username" placeholder="Enter GitHub username" />
-        <button id="search" type="submit">Search</button>-->
     </div>
     <div class="min-h-screen bg-[#0D1117] mx-auto">
-        <div class="mx-10 pt-8 flex space-x-5">
-            <img class="h-16 w-16 rounded-full" src="img/github-mark-white.svg" id="profile_pic">
+        <div class="mx-10 pt-8 flex md:flex-col md:space-y-3 space-x-5">
+            <img class="h-16 w-16 rounded-full md:h-72 md:w-72" src="https://avatars.githubusercontent.com/u/111200225?v=4" id="profile_pic">
             <div>
-                <p id="results" class="text-white text-2xl font-extrabold" id="profile_name">pratyush singha</p>
+                <p id="results" class="text-white text-2xl md:text-3xl font-extrabold" id="profile_name">pratyush singha
+                </p>
                 <p class="text-gray-400 font-medium" id="profile_login">pratyushsingha</p>
             </div>
         </div>
@@ -99,25 +91,81 @@
         <div class="my-4 mx-10">
             <p class="text-white font-medium text-lg" id="profile_bio">B.tech. Computer Science student at JIS
                 UNIVERSITY</p>
+            <div class="hidden md:block">
+                <button
+                    class="w-full max-w-xs flex items-center justify-center px-4 py-2 text-white bg-green-500 rounded-md hover:bg-green-600 focus:outline-none my-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <!-- SVG path data -->
+                    </svg>
+                    Follow
+                </button>
+            </div>
+            <div class="flex space-x-3">
+                <img class="h-5 w-5 mt-1" width="50" height="50" src="https://img.icons8.com/ios/50/FFFFFF/link--v1.png"
+                    alt="link--v1" />
+                <a class="text-gray-400 text-base" target="_blank" id="profile_email"
+                    href="mailto:pratyushsingha83@gmail.com">pratyushsingha83@gmail.com</a>
+            </div>
+            <div class="flex space-x-3">
+                <img class="h-5 w-5 mt-1" width="50" height="50" src="https://img.icons8.com/ios/50/FFFFFF/link--v1.png"
+                    alt="link--v1" />
+                <a class="text-gray-400 text-base" target="_blank" id="profile_blog"
+                    href="https://pratyushsingha.tech">pratyushsingha.tech</a>
+            </div>
+            <div class="flex space-x-3" id="twitterDiv">
+                <img class="h-5 w-5 mt-1" width="50" height="50" id="twitterIcon"
+                    src="https://img.icons8.com/ios/50/FFFFFF/link--v1.png" alt="link--v1" />
+                <a class="text-gray-400 text-base" target="_blank" id="profile_twitter"
+                    href="https://twitter.com/_being_pratyush">@_being_pratyush</a>
+            </div>
+            <div class="flex space-x-3" id="locationDiv">
+                <img class="h-5 w-5 mt-1" width="50" height="50" id="twitterIcon"
+                    src="https://img.icons8.com/ios/50/FFFFFF/link--v1.png" alt="link--v1" />
+                <p id="profile_location" class="text-gray-400 text-base">kolkata,india</p>
+            </div>
+            <!--  <div class="flex space-x-3" id="twitterDiv">
+                <img class="h-5 w-5 mt-1" width="50" height="50" id="twitterIcon"
+                    src="https://img.icons8.com/ios/50/FFFFFF/link--v1.png" alt="link--v1" />
+                <a class="text-gray-400 text-base" target="_blank" id="profile_twitter"
+                    href="https://twitter.com/_being_pratyush">@_being_pratyush</a>
+            </div>
+            <div class="flex space-x-3" id="comapanyDiv">
+                <img class="h-5 w-5 mt-1" width="50" height="50" id="twitterIcon"
+                    src="https://img.icons8.com/ios/50/FFFFFF/link--v1.png" alt="link--v1" />
+                <a class="text-gray-400 text-base" target="_blank" id="profile_twitter"
+                    href="https://twitter.com/_being_pratyush"></a>
+            </div> -->
+
+            <div class="flex justify-items-start space-x-3">
+                <div class="flex justify-between space-x-2 text-sm mt-1">
+                    <img class="h-5 w-5 mt-1" width="50" height="50"
+                        src="https://img.icons8.com/ios/50/FFFFFF/link--v1.png" alt="link--v1" />
+                    <span class="text-white font-bold" id="profile_followers">4</span><span class="text-gray-300">
+                        Followers</span>
+                </div>
+                <div class="text-white">.</div>
+                <div class="flex justify-between space-x-2 text-sm mt-1">
+                    <img class="h-5 w-5 mt-1" width="50" height="50"
+                        src="https://img.icons8.com/ios/50/FFFFFF/link--v1.png" alt="link--v1" />
+                    <div class="hover:text-blue-600">
+                        <span class="text-white font-bold " id="profile_following">7</span><span class="text-gray-300">
+                            Following</span>
+                    </div>
+                </div>
+            </div>
             <button
-                class="w-full max-w-xs flex items-center justify-center px-4 py-2 text-white bg-green-500 rounded-md hover:bg-green-600 focus:outline-none my-3">
+                class="block md:hidden w-full max-w-xs flex items-center justify-center px-4 py-2 text-white bg-green-500 rounded-md hover:bg-green-600 focus:outline-none my-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
                     <!-- SVG path data -->
                 </svg>
                 Follow
             </button>
-            <div class="flex space-x-3">
-                <img class="h-5 w-5 mt-1" width="50" height="50" src="https://img.icons8.com/ios/50/FFFFFF/link--v1.png" alt="link--v1" />
-                <!-- <p id="profile_blog" class="text-gray-400 text-base">
-                    <a id="profile_blog" href="https://pratyushsingha.tech">pratyushsingha.tech</a>
-                </p> -->
-                <a class="text-gray-400 text-base" target="_blank" id="profile_blog" href="https://pratyushsingha.tech">pratyushsingha.tech</a>
-            </div>
         </div>
 
     </div>
 </body>
 <script src="script.js"></script>
-<a href="https://icons8.com/icon/92/link">Link</a> icon by <a href="https://icons8.com">Icons8</a>
+<!-- <a href="https://icons8.com/icon/92/link">Link</a> icon by <a href="https://icons8.com">Icons8</a> -->
 
 </html>
