@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+    .custom-underline {
+      border-bottom: 3px solid rgb(238, 128, 2); /* Replace 'orange' with your desired underline color */
+    }

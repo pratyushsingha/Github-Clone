@@ -8,6 +8,7 @@ const profile_blog = document.getElementById('profile_blog')
 const profile_email = document.getElementById('profile_email')
 const profile_twitter = document.getElementById('profile_twitter')
 const twitterDiv = document.getElementById('twitterDiv')
+const public_repos = document.getElementById('profile_repos')
 
 usernameText.addEventListener('keypress', (e) => {
     if (e.key === "Enter") {
@@ -23,7 +24,7 @@ usernameText.addEventListener('keypress', (e) => {
             profile_pic.src = data.avatar_url
             profile_login.textContent = data.login
             profile_bio.textContent = data.bio
-            profile_blog.href = data.blog
+            profile_blog.href = `https://${data.blog}`
             profile_blog.textContent = data.blog
             console.log(profile_blog.href)
             if (data.twitter_username != null) {
@@ -36,6 +37,13 @@ usernameText.addEventListener('keypress', (e) => {
             }
 
             document.getElementById('profile_location').textContent = data.location
+            document.getElementById('profile_followers').textContent = `${data.followers}`
+            document.getElementById('profile_following').textContent = `${data.following}`
+
+            // console.log(data.followers)
+
+            public_repos.textContent = data.public_repos
+            // console.log(data.public_repos)
             usernameText.value = ""
 
         }).catch(error => {
@@ -62,22 +70,23 @@ usernameText.addEventListener('keypress', (e) => {
             console.log(error + "data cant be fetched")
         })
 
-        const follower = fetch(`https://api.github.com/users/${usernameVal}/followers`)
-        follower.then((Response) => {
-            return Response.json()
+        const username = 'pratyushsingha';
 
-        }).then((data) => {
-            console.log(data.length)
-            document.getElementById('profile_followers').textContent = `${data.length}`
-        })
+        fetch(`https://api.github.com/users/${username}/repos`)
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(repo => {
+                    const repoName = repo.name;
+                    const repoDescription = repo.description;
 
-        const following = fetch(`https://api.github.com/users/${usernameVal}/following`)
-        following.then((Response) => {
-            return Response.json()
+                    console.log("Repository Name: ", repoName);
+                    console.log("Description: ", repoDescription);
+                    console.log("---------------");
+                });
+            })
+            .catch(error => {
+                console.error(error);
+            });
 
-        }).then((data) => {
-            console.log(data.length)
-            document.getElementById('profile_following').textContent = `${data.length}`
-        })
     }
 })
