@@ -78,16 +78,16 @@
         </div>
         <!-- navbar end -->
     </div>
-    <div class="min-h-screen bg-[#0D1117] mx-auto justify-center">
+    <div class="h-screen bg-[#0D1117]">
 
         <!-- second  -->
-        <div class="flex flex-col md:flex md:flex-row">
-            <div>
+        <div class="flex flex-col md:flex md:flex-row justify-center">
+            <div class="md:w-2/5">
                 <div class="mx-10 pt-8 flex md:flex-col md:space-y-3 space-x-5">
                     <img class="h-16 w-16 rounded-full md:h-72 md:w-72"
                         src="https://avatars.githubusercontent.com/u/111200225?v=4" id="profile_pic" alt="profile_pic">
                     <div>
-                        <p id="results" class="text-white text-2xl md:text-3xl font-extrabold" id="profile_name">
+                        <p id="results" class=" text-white text-2xl md:text-3xl font-extrabold" id="profile_name">
                             pratyush
                             singha
                         </p>
@@ -96,20 +96,16 @@
                 </div>
                 <div class="hidden md:block mx-10">
                     <button
-                        class="w-full max-w-xs flex items-center justify-center px-4 py-2 text-white bg-green-500 rounded-md hover:bg-green-600 focus:outline-none my-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <!-- SVG path data -->
-                        </svg>
+                        class="w-4/5 flex items-center justify-center px-4 py-2 text-white bg-green-500 rounded-md hover:bg-green-600 focus:outline-none my-3">
                         Follow
                     </button>
                 </div>
                 <div class="my-4 mx-10">
-                    <p class="md:w-2/3 text-white font-medium text-lg" id="profile_bio">B.tech. Computer Science student
+                    <p class="text-white font-medium text-lg" id="profile_bio">B.tech. Computer Science student
                         at JIS
                         UNIVERSITY</p>
                     <br>
-                    <div class="flex space-x-3">
+                    <div id="emailDiv" class="flex space-x-3">
                         <svg class="octicon octicon-mail mt-1" viewBox="0 0 16 16" version="1.1" width="16" height="16"
                             aria-hidden="true">
                             <path
@@ -120,7 +116,7 @@
                         <a class="text-gray-400 text-base" target="_blank" id="profile_email"
                             href="mailto:pratyushsingha83@gmail.com">pratyushsingha83@gmail.com</a>
                     </div>
-                    <div class="flex space-x-3">
+                    <div id="webDiv" class="flex space-x-3">
                         <img class="h-5 w-5 mt-1" width="50" height="50"
                             src="https://img.icons8.com/ios/50/FFFFFF/link--v1.png" alt="link--v1" />
                         <a class="text-gray-400 text-base" target="_blank" id="profile_blog"
@@ -130,7 +126,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 273.5 222.3" role="img"
                             aria-labelledby="5vrwp8qx44b90cu10jl9vyz324atwb" class="octicon mt-1" height="16"
                             width="16">
-                            <title id="5vrwp8qx44b90cu10jl9vyz324atwb">Twitter</title>
+                            <!-- <title id="5vrwp8qx44b90cu10jl9vyz324atwb">Twitter</title> -->
                             <path
                                 d="M273.5 26.3a109.77 109.77 0 0 1-32.2 8.8 56.07 56.07 0 0 0 24.7-31 113.39 113.39 0 0 1-35.7 13.6 56.1 56.1 0 0 0-97 38.4 54 54 0 0 0 1.5 12.8A159.68 159.68 0 0 1 19.1 10.3a56.12 56.12 0 0 0 17.4 74.9 56.06 56.06 0 0 1-25.4-7v.7a56.11 56.11 0 0 0 45 55 55.65 55.65 0 0 1-14.8 2 62.39 62.39 0 0 1-10.6-1 56.24 56.24 0 0 0 52.4 39 112.87 112.87 0 0 1-69.7 24 119 119 0 0 1-13.4-.8 158.83 158.83 0 0 0 86 25.2c103.2 0 159.6-85.5 159.6-159.6 0-2.4-.1-4.9-.2-7.3a114.25 114.25 0 0 0 28.1-29.1"
                                 fill="gray"></path>
@@ -172,18 +168,14 @@
                     </div>
                     <button
                         class="block md:hidden w-full max-w-xs flex items-center justify-center px-4 py-2 text-white bg-green-500 rounded-md hover:bg-green-600 focus:outline-none my-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <!-- SVG path data -->
-                        </svg>
                         Follow
                     </button>
                 </div>
             </div>
 
             <!-- <div class="text-white">sex</div> -->
-            <div class="flex flex-col mx-8">
-                <div class="mt-8 mx-5 flex justify-between space-x-3 md:space-x-5 text-white overflow-y-auto">
+            <div class="flex flex-col mx-8 md:mx-0 justify-normal">
+                <div class="mt-8 flex justify-between space-x-3 md:space-x-3 text-white overflow-y-auto">
                     <div class="flex space-x-2 cursor-pointer">
                         <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16"
                             data-view-component="true" class="octicon octicon-book UnderlineNav-octicon mt-1">
@@ -242,7 +234,7 @@
                     <div class="flex flex-col md:flex-row">
                         <div class="pt-2">
                             <input type="text"
-                                class="mx-4 d-inline-block w-screen my-3 md:w-96 d-lg-none flex-order-1 border-gray-700 f5 no-underline border border-border-default bg-inherit rounded-2 px-2 py-1 color-fg-inherit text-white rounded-md focus:border-blue-500"
+                                class="mx-4 w-72 my-3 md:w-96 d-lg-none flex-order-1 border-gray-700 no-underline border border-border-default bg-inherit rounded-2 px-2 py-1 text-white rounded-md active:border-spacing-1 active:border-blue-500"
                                 placeholder="Enter github id... " id="username">
                         </div>
                         <div class="flex justify-start space-x-3 text-white -my-4 md:my-2 mx-4">
@@ -280,7 +272,7 @@
                     </div> -->
                     <div id="repos" class="container mx-auto py-4">
                         <!-- Repository cards will be dynamically added here -->
-                        
+
                     </div>
 
                 </div>

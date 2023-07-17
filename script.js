@@ -35,16 +35,18 @@ function displayRepositories(username) {
                 card.target = '_blank';
 
 
-                card.classList.add('flex', 'flex-col', 'justify-center', 'py-6');
+                // card.classList.add('flex', 'flex-col', 'justify-center', 'py-6');
+                card.classList.add('flex', 'flex-col', 'justify-center', 'py-5');
+
 
                 // Create the repository name element
                 const name = document.createElement('div');
-                name.classList.add('text-xl', 'text-[#2D79E9]', 'hover:underline', 'font-extrabold');
+                name.classList.add('flex', 'justify-between', 'text-xl', 'text-[#2D79E9]', 'hover:underline', 'font-extrabold');
                 name.textContent = repo.name;
 
                 // Create the repository description element
                 const description = document.createElement('div');
-                description.classList.add('text-sm', 'text-gray-400', 'mb-8');
+                description.classList.add('text-sm', 'text-gray-400', 'mb-8', 'text-justify', 'mr-5');
                 description.textContent = repo.description || 'No description provided🥹.';
 
                 const hr = document.createElement('hr');
@@ -64,9 +66,7 @@ function displayRepositories(username) {
         });
 }
 
-// Initial display of repositories
 displayRepositories("pratyushsingha");
-
 
 
 usernameText.addEventListener('keypress', (e) => {
@@ -83,19 +83,31 @@ usernameText.addEventListener('keypress', (e) => {
             profile_pic.src = data.avatar_url
             profile_login.textContent = data.login
             profile_bio.textContent = data.bio
-            profile_blog.href = `https://${data.blog}`
-            profile_blog.textContent = data.blog
-            console.log(profile_blog.href)
+            // console.log(data.blog)
+            if (data.blog != null) {
+                profile_blog.href = `https://${data.blog}`
+                profile_blog.textContent = data.blog
+                // console.log(profile_blog.href)
+            }
+            else {
+                document.getElementById('webDiv').style.display = 'none'
+            }
+            // console.log(profile_blog.href)
             if (data.twitter_username != null) {
                 profile_twitter.href = `https://twitter.com/${data.twitter_username}`
                 profile_twitter.textContent = data.twitter_username
-                console.log(data.twitter_username)
+                // console.log(data.twitter_username)
             }
             else {
                 twitterDiv.style.display = 'none'
             }
+            if (data.location != null) {
 
-            document.getElementById('profile_location').textContent = data.location
+                document.getElementById('profile_location').textContent = data.location
+            }
+            else {
+                document.getElementById('locationDiv').style.display = 'none'
+            }
             document.getElementById('profile_followers').textContent = `${data.followers}`
             document.getElementById('profile_following').textContent = `${data.following}`
 
@@ -111,23 +123,32 @@ usernameText.addEventListener('keypress', (e) => {
 
 
         const email = fetch(`https://api.github.com/users/${usernameVal}/events/public`)
-        email.then((Response) => {
-            return Response.json()
-        }).then((data) => {
-            // console.log(data)
-            // want to fetch email id
-            for (let i = 0; i < data.length; i++) {
-                if (data[i].type === "PushEvent") {
-                    console.log(data[i].payload.commits[0].author.email)
-                    profile_email.href = `mailto:${data[i].payload.commits[0].author.email}`
-                    profile_email.textContent = data[i].payload.commits[0].author.email
+        email
+            .then((Response) => {
+                return Response.json()
+            })
+            .then((data) => {
+                // console.log(data)
+                // want to fetch email id
+                for (let i = 0; i < data.length; i++) {
+                    if (data[i].type === "PushEvent") {
+                        const authorEmail = data[i].payload.commits[0].author.email;
+                        console.log(authorEmail);
+
+                        // Check if the email starts with a number
+                        if (!isNaN(authorEmail.charAt(0))) {
+                            document.getElementById('emailDiv').style.display = 'none';
+                        } else {
+                            profile_email.href = `mailto:${authorEmail}`;
+                            profile_email.textContent = authorEmail;
+                        }
+                    }
                 }
-            }
+            })
+            .catch((error) => {
+                console.log(error + "data cant be fetched");
+            });
 
-
-        }).catch(error => {
-            console.log(error + "data cant be fetched")
-        })
 
 
         let repoList = fetch(`https://api.github.com/users/${usernameVal}/repos`)
@@ -139,34 +160,35 @@ usernameText.addEventListener('keypress', (e) => {
                 // Clear previous repository cards
                 reposContainer.innerHTML = '';
 
-                // Iterate over each repository and create a card for it
+
                 data.forEach(repo => {
-                    // Create the card element
+
                     const card = document.createElement('a');
                     card.href = repo.html_url;
                     card.target = '_blank';
 
 
-                    card.classList.add('flex', 'flex-col', 'justify-center', 'py-6');
+                    card.classList.add('flex', 'flex-col', 'justify-center', 'py-5');
 
-                    // Create the repository name element
+
                     const name = document.createElement('div');
-                    name.classList.add('text-xl', 'text-[#2D79E9]', 'hover:underline', 'font-extrabold');
+                    name.classList.add('flex', 'justify-between', 'text-xl', 'text-[#2D79E9]', 'hover:underline', 'font-extrabold');
                     name.textContent = repo.name;
 
-                    // Create the repository description element
+
+
+
                     const description = document.createElement('div');
-                    description.classList.add('text-sm', 'text-gray-400', 'mb-8');
+                    description.classList.add('text-sm', 'text-gray-400', 'mb-8', 'text-justify', 'mr-5');
                     description.textContent = repo.description || 'No description provided🥹.';
 
                     const hr = document.createElement('hr');
                     hr.classList.add('border-gray-600', 'my-4');
 
-                    // Append the name and description to the card
                     card.appendChild(name);
                     card.appendChild(description)
                     card.appendChild(hr);
-                    // Append the card to the repositories container
+
                     reposContainer.appendChild(card);
 
                 });
