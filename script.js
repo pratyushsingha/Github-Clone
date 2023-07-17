@@ -12,45 +12,7 @@ const profile_twitter = document.getElementById('profile_twitter')
 const twitterDiv = document.getElementById('twitterDiv')
 const public_repos = document.getElementById('profile_repos')
 
-if (document.window.onload) {
-    let repoList = fetch(`https://api.github.com/users/pratyushsingha/repos`)
-    repoList.then(response => response.json())
-        .then(data => {
-console.log(data)
-            const reposContainer = document.getElementById('repos');
 
-            // Iterate over each repository and create a card for it
-            data.forEach(repo => {
-                // Create the card element
-                const card = document.createElement('a');
-                card.href = repo.html_url;
-                card.target = '_blank';
-                card.rel = 'noopener noreferrer';
-                card.classList.add('repo-card', 'p-4', 'flex', 'flex-col', 'justify-between', 'group');
-
-                // Create the repository name element
-                const name = document.createElement('h2');
-                name.classList.add('text-xl', 'font-bold', 'text-[#2F81F7]', 'hover:underline');
-                name.textContent = repo.name;
-
-                // Create the repository description element
-                const description = document.createElement('p');
-                description.classList.add('text-sm', 'text-gray-400', 'mt-2');
-                description.textContent = repo.description || 'No description provided.';
-
-                // Append the name and description to the card
-                card.appendChild(name);
-                card.appendChild(description);
-
-                // Append the card to the repositories container
-                reposContainer.appendChild(card);
-            });
-        })
-        .catch(error => {
-            console.log('Error:', error);
-        });
-}
-else {
     usernameText.addEventListener('keypress', (e) => {
         if (e.key === "Enter") {
             const usernameVal = usernameText.value
@@ -148,4 +110,3 @@ else {
                 });
         }
     })
-}
