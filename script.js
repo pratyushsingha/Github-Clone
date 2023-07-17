@@ -1,3 +1,5 @@
+const { createLogger } = require("vite")
+
 const usernameText = document.getElementById('username')
 const btn = document.getElementById('search')
 const results = document.getElementById('results')
@@ -10,10 +12,11 @@ const profile_twitter = document.getElementById('profile_twitter')
 const twitterDiv = document.getElementById('twitterDiv')
 const public_repos = document.getElementById('profile_repos')
 
-if (window.onload) {
+if (document.window.onload) {
     let repoList = fetch(`https://api.github.com/users/pratyushsingha/repos`)
     repoList.then(response => response.json())
         .then(data => {
+console.log(data)
             const reposContainer = document.getElementById('repos');
 
             // Iterate over each repository and create a card for it
