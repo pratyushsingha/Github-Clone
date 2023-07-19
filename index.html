@@ -174,13 +174,21 @@
                         </div>
                     </div>
                     <button
-                        class="block md:hidden w-full max-w-xs flex items-center justify-center px-4 py-2 text-white bg-green-500 rounded-md hover:bg-green-600 focus:outline-none my-3">
+                        class="block md:hidden w-full flex items-center justify-center px-4 py-2 text-white bg-green-500 rounded-md hover:bg-green-600 focus:outline-none my-3">
                         Follow
                     </button>
+                    <hr class="border-t border-gray-600 mt-2">
+                    <div class="text-white text-xl font-extrabold my-4">Followers</div>
+                    <div class="flex space-x-3">
+                        <div id="FollowersPhoto" class="flex space-x-3"></div>
+                        
+                        <div class="w-16 h-16 bg-gray-500 text-black flex flex-col text-xl rounded-full font-bold">
+                            <p class="flex justify-center">+</p>
+                            <p class="flex justify-center mb-2">more</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <!-- <div class="text-white">sex</div> -->
             <div class="flex flex-col mx-8 md:pr-20 justify-normal">
                 <div class="mt-8 flex justify-between space-x-3 md:space-x-3 text-white overflow-y-auto">
                     <div class="flex space-x-2 cursor-pointer">
@@ -241,7 +249,7 @@
                     <div class="flex flex-col md:flex-row">
                         <div class="pt-2">
                             <input type="text"
-                                class="mx-4 w-72 my-3 md:w-96 d-lg-none flex-order-1 border-gray-700 no-underline border border-border-default bg-inherit rounded-2 px-2 py-1 text-white rounded-md active:border-spacing-1 active:border-blue-500"
+                                class="mx-4 w-full md:w-96 my-3 md:w-96 d-lg-none flex-order-1 border-gray-700 no-underline border border-border-default bg-inherit rounded-2 px-2 py-1 text-white rounded-md active:border-spacing-1 focus:ring-blue-500"
                                 placeholder="Enter your github username... " id="username">
                         </div>
                         <div class="flex justify-start space-x-3 text-white -my-4 md:my-2 mx-4">
@@ -266,19 +274,7 @@
                         </div>
                     </div>
                     <hr class="border-t border-gray-600 mx-5 mt-2">
-                    <!-- <div class="container  py-10 text-white">
-                        <div id="repos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mr-5"></div>
-                    </div> -->
-                    <!-- <div class="container mx-auto py-10 first-letter text">
-                        <div id="repos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-                    </div> -->
-                    <!-- <div class="flex flex-col mx-5 space-y-3" >
-                        <div class="text-xl text-[#2D79E9]  hover:underline" id="repos_name"></div>
-                        <div class="text-sm text-gray-400" id="repos_description"></div>
-                        <hr class="border-t border-gray-600">
-                    </div> -->
                     <div id="repos" class="container mx-auto py-4">
-                        <!-- Repository cards will be dynamically added here -->
 
                     </div>
 

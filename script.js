@@ -1,4 +1,3 @@
-// const { createLogger } = require("vite")
 
 const usernameText = document.getElementById('username')
 const btn = document.getElementById('search')
@@ -13,8 +12,37 @@ const twitterDiv = document.getElementById('twitterDiv')
 const public_repos = document.getElementById('profile_repos')
 const repo_name = document.getElementById('repos_name')
 const repo_description = document.getElementById('repos_description')
+// const Followers_photo = document.getElementById('FollowersPhoto')
 
+function displayFollowers(username) {
+    const apiUrl = `https://api.github.com/users/${username}/followers`
 
+    fetch(apiUrl)
+        .then((response) => response.json())
+        .then((data) => {
+            const Followers_photo = document.getElementById('FollowersPhoto')
+            Followers_photo.innerHTML = ''
+
+            function followersDesc(item, index) {
+                if (index < 2) {
+                    // console.log(item.avatar_url);
+
+                    const followerPhoto = document.createElement('img');
+                    followerPhoto.classList.add("w-16", "h-16", "bg-gray-500", "rounded-full");
+                    followerPhoto.src = item.avatar_url;
+
+                    Followers_photo.appendChild(followerPhoto);
+                }
+            }
+
+            data.forEach(followersDesc);
+
+        })
+        .catch((error) => {
+            console.log(error, 'error')
+        })
+}
+displayFollowers("pratyushsingha")
 
 
 function displayRepositories(username) {
@@ -133,7 +161,7 @@ usernameText.addEventListener('keypress', (e) => {
                 for (let i = 0; i < data.length; i++) {
                     if (data[i].type === "PushEvent") {
                         const authorEmail = data[i].payload.commits[0].author.email;
-                        console.log(authorEmail);
+                        // console.log(authorEmail);
 
                         // Check if the email starts with a number
                         if (!isNaN(authorEmail.charAt(0))) {
@@ -196,6 +224,35 @@ usernameText.addEventListener('keypress', (e) => {
             .catch(error => {
                 console.log('Error:', error);
             });
+
+        const followers = fetch(`https://api.github.com/users/${usernameVal}/followers`);
+        followers
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                console.log(data);
+                const Followers_photo = document.getElementById('FollowersPhoto')
+                Followers_photo.innerHTML = ''
+
+                function followersDesc(item, index) {
+                    if (index < 2) {
+                        console.log(item.avatar_url);
+
+                        const followerPhoto = document.createElement('img');
+                        followerPhoto.classList.add("w-16", "h-16", "bg-gray-500", "rounded-full");
+                        followerPhoto.src = item.avatar_url;
+
+                        Followers_photo.appendChild(followerPhoto);
+                    }
+                }
+
+                data.forEach(followersDesc);
+            })
+            .catch((error) => {
+                console.log('Error', error);
+            });
+
 
     }
 })
