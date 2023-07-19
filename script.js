@@ -113,7 +113,7 @@ usernameText.addEventListener('keypress', (e) => {
             profile_bio.textContent = data.bio
             // console.log(data.blog)
             if (data.blog != null) {
-                profile_blog.href = `https://${data.blog}`
+                profile_blog.href = `${data.blog}`
                 profile_blog.textContent = data.blog
                 // console.log(profile_blog.href)
             }
@@ -231,13 +231,13 @@ usernameText.addEventListener('keypress', (e) => {
                 return response.json();
             })
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 const Followers_photo = document.getElementById('FollowersPhoto')
                 Followers_photo.innerHTML = ''
 
                 function followersDesc(item, index) {
                     if (index < 2) {
-                        console.log(item.avatar_url);
+                        // console.log(item.avatar_url);
 
                         const followerPhoto = document.createElement('img');
                         followerPhoto.classList.add("w-16", "h-16", "bg-gray-500", "rounded-full");
